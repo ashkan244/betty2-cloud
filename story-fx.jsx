@@ -21,7 +21,7 @@
 const S2FX_GOLD = "#e9c46a";
 const S2FX_WHITE = "#f4f1ea";
 // weather covers all four seasons, so a rain layer would be wrong half the time
-const S2FX_MOODS = { lighthouse: "beam", dreams: "stars", coffee: "steam", summer: "pollen", market: "dust", weather: "dust" };
+const S2FX_MOODS = { lighthouse: "beam", dreams: "stars", coffee: "steam", summer: "pollen", market: "dust", weather: "dust", waiter: "steam", hachiko: "dust" };
 
 function s2fxOn() {
   return new URLSearchParams(location.search).get("fx") !== "0";
