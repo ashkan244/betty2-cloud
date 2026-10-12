@@ -1,0 +1,50 @@
+# The FACE version of one episode or story: the host's recording in the camera
+# layer, the host's own voice on top (-14 LUFS). Started by render/cloud-face.mjs,
+# which uploads the clip to the "footage" release first.
+name: face
+on:
+  workflow_dispatch:
+    inputs:
+      name:   { description: "ep31 or story-coffee", required: true }
+      ext:    { description: "file extension of the clip", required: false, default: ".mp4" }
+      offset: { description: "second in the clip where the episode starts (the clap)", required: false, default: "0" }
+
+permissions:
+  contents: write
+
+jobs:
+  face:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: install (runner's Google Chrome, no Chromium download)
+        working-directory: render
+        env: { PUPPETEER_SKIP_DOWNLOAD: "true" }
+        run: npm ci --no-audit --no-fund
+      - name: fetch the recording
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          mkdir -p render/footage
+          gh release download footage -p "${{ inputs.name }}${{ inputs.ext }}" -D render/footage --clobber
+          ls -la render/footage
+      - name: render the face version
+        working-directory: render
+        env:
+          ONLY: ${{ inputs.name }}
+          OFFSET: ${{ inputs.offset }}
+          CAP: jpeg
+          CHROME: /usr/bin/google-chrome
+          FFMPEG: ffmpeg
+          FORCE: "1"
+        run: node final.mjs
+      - name: attach to the "finals" release
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          gh release view finals >/dev/null 2>&1 || gh release create finals --title "Finals" --notes "Face versions (host footage + voice)."
+          gh release upload finals render/out/final/*-face.mp4 --clobber

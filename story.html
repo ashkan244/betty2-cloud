@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>English Unlocked — Slow Story</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500;1,6..72,600&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #000; }
+  #root { position: fixed; inset: 0; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script>
+  (function () {
+    var q = new URLSearchParams(location.search);
+    var raw = q.get("story") || "lighthouse";
+    // ?ui=v1 rolls back to the old centred-caption layout; v2 (narrator) is default.
+    var ui = (q.get("ui") || "v2").toLowerCase() === "v1" ? "v1" : "v2";
+    window.__EU_STORY_UI = ui;
+    window.__EU_STORY = String(raw).toLowerCase().replace(/[^a-z0-9]/g, "");
+    function babel(src) { document.write('<script type="text/babel" src="' + src + '"><\/script>'); }
+    babel("animations.jsx");
+    babel("story-data.jsx");
+    if (ui === "v2") babel("slot.jsx");
+    babel(ui === "v2" ? "story-ui-v2.jsx" : "story-ui.jsx");
+    if (ui === "v2") babel("story-fx.jsx");   // motion layer (?fx=0 off) + ?dir=1 narrator moves
+  })();
+</script>
+
+<script type="text/babel">
+  const RENDER = new URLSearchParams(location.search).has("render");
+  const ID = window.__EU_STORY || "lighthouse";
+  window.STORY = window.getStory(ID);
+  // preload all beat images so render-mode screenshots never catch a blank frame
+  try { window.STORY.beats.forEach((b) => { const im = new Image(); im.src = b.img; }); } catch (e) {}
+
+  function App() {
+    return (
+      <Stage
+        width={1920} height={1080}
+        duration={window.STORY.duration}
+        background="#0a0e12"
+        chrome={!RENDER}
+        autoplay={!RENDER}
+        loop={!RENDER}
+        persistKey={RENDER ? ("eu-story-" + ID + "-render") : ("english-unlocked-story-" + ID)}>
+        {window.__EU_STORY_UI === "v1" ? <SlideStoryDeck /> : <NarratorStoryDeck />}
+      </Stage>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  window.__RENDER_MODE = RENDER;
+  document.title = "English Unlocked — Story " + ID + (RENDER ? " (render)" : "");
+</script>
+<script>
+  window.addEventListener("load", function () {
+    if (new URLSearchParams(location.search).has("render")) return;
+    var s = document.createElement("script"); s.src = "recorder.jsx";
+    setTimeout(function () { document.body.appendChild(s); }, 800);
+  });
+</script>
+</body>
+</html>
