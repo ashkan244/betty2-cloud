@@ -1,0 +1,16 @@
+{
+  "name": "english-unlocked-render",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Offline frame-by-frame MP4 renderer for the English Unlocked deck.",
+  "scripts": {
+    "render": "node render.mjs",
+    "render:all": "node render-all.mjs",
+    "short": "node render-short.mjs",
+    "validate": "node validate.mjs"
+  },
+  "dependencies": {
+    "puppeteer": "^23.0.0"
+  }
+}

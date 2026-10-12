@@ -1,0 +1,66 @@
+# Render English Unlocked episodes in parallel (one runner per episode).
+# Run: Actions → render → Run workflow, or
+#   gh workflow run render.yml -f eps=24,25,26
+name: render
+on:
+  workflow_dispatch:
+    inputs:
+      eps:
+        description: "Episodes, comma separated"
+        required: true
+        default: "24,25,26,27,28,29,30,01,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20"
+      fps:
+        description: "Frames per second"
+        required: false
+        default: "30"
+
+permissions:
+  contents: write
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      eps: ${{ steps.m.outputs.eps }}
+    steps:
+      - id: m
+        run: echo "eps=$(echo '${{ inputs.eps }}' | jq -Rc 'split(",") | map(gsub("\\s";"")) | map(select(length>0))')" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+      - name: make sure the release exists
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: gh release view renders >/dev/null 2>&1 || gh release create renders --title "Renders" --notes "Rendered episodes (silent MP4, 1080p30)."
+
+  render:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        ep: ${{ fromJSON(needs.plan.outputs.eps) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: install (uses the runner's Google Chrome, no Chromium download)
+        working-directory: render
+        env: { PUPPETEER_SKIP_DOWNLOAD: "true" }
+        run: npm ci --no-audit --no-fund
+      - name: render episode ${{ matrix.ep }}
+        working-directory: render
+        env:
+          EP: ${{ matrix.ep }}
+          FPS: ${{ inputs.fps }}
+          CAP: jpeg
+          SQ: "92"
+          OUTDIR: out/v5
+          CHROME: /usr/bin/google-chrome
+          FFMPEG: ffmpeg
+        run: node render.mjs
+      - name: attach to the "renders" release
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: gh release upload renders render/out/v5/english-unlocked-ep${{ matrix.ep }}.mp4 --clobber
