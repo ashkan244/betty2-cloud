@@ -43,6 +43,19 @@ function S2Slide({ beat, opacity, time }) {
   let tx = dir * (kb * 30 - 15);
   let ty = -(kb * 16 - 8);
   if ((window.s2fxOn && s2fxOn())) { const m = s2Move(beat.i, kb); scale = m.s; tx = m.x; ty = m.y; }   // story-fx.jsx: six moves
+  if (beat.archive) {
+    // a real archive photo: whole, over a dark blurred copy of itself, a slow push in,
+    // placed in the upper right so the narrator circle and caption keep their space
+    return (
+      <div style={{ position: "absolute", inset: 0, opacity, zIndex: beat.i, overflow: "hidden" }}>
+        <img src={beat.img} draggable={false} style={{ position: "absolute", left: "-8%", top: "-8%", width: "116%", height: "116%",
+          objectFit: "cover", filter: "blur(40px) brightness(0.38) saturate(0.7)" }} />
+        <img src={beat.img} draggable={false} style={{ position: "absolute", left: "30%", top: "12%", width: "64%", height: "56%",
+          objectFit: "contain", transform: `scale(${1 + 0.05 * kb})`, transformOrigin: "60% 40%",
+          filter: "drop-shadow(0 24px 50px rgba(0,0,0,0.75)) sepia(0.12)" }} />
+      </div>
+    );
+  }
   return (
     <div style={{ position: "absolute", inset: 0, opacity, zIndex: beat.i }}>
       <div style={{ position: "absolute", inset: "-2.5%", transform: `scale(${scale}) translate(${tx}px, ${ty}px)`, willChange: "transform" }}>
@@ -125,6 +138,13 @@ function NarratorStoryDeck() {
 
       {(window.s2fxOn && s2fxOn()) && <S2FXParticles time={time} />}
       {(window.s2fxOn && s2fxOn()) && <S2FXLeak beats={beats} cur={cur} time={time} />}
+
+      {beats[cur].archive && beats[cur].credit && (
+        <div style={{ position: "absolute", right: 78, top: 712, zIndex: 72, opacity: curFade * (1 - bookOp) * 0.85, textAlign: "right",
+          fontFamily: S2_UI, fontSize: 17, letterSpacing: "0.08em", color: "rgba(244,241,234,0.75)", textShadow: "0 1px 6px rgba(0,0,0,0.9)" }}>
+          {"ARCHIVE PHOTO · " + beats[cur].credit}
+        </div>
+      )}
 
       {/* header */}
       <div style={{ position: "absolute", left: 78, right: 78, top: 58, zIndex: 70, opacity: introOp,

@@ -128,7 +128,9 @@
       "“Good evening! Welcome. Can I get you something to drink?”",
       "Perfect English is not the goal. Being heard is. What will YOU say today?",
     ] },
-    hachiko: { title: "Hachikō — The Dog Who Waited", caps: [
+    hachiko: { title: "Hachikō — The Dog Who Waited",
+      archive: { 12: { file: "12-archive.jpg", credit: "Hachikō at Shibuya Station, c. 1933 · public domain" }, 16: { file: "16-archive.jpg", credit: "Shibuya, 2020 · CC0" } },
+      caps: [
       "Every afternoon, when the train came in, a dog sat at Shibuya Station in Tokyo.",
       "He was waiting for someone. Someone who would never come.",
       "His name was Hachikō — a white Akita dog with soft ears and a curled tail.",
@@ -149,7 +151,9 @@
       "So — who would YOU wait for?",
     ] },
     // ── True Stories in Slow English (see TRUE-STORIES.md) ──
-    shackleton: { title: "Shackleton — Lost in the Ice", caps: [
+    shackleton: { title: "Shackleton — Lost in the Ice",
+      archive: { 2: { file: "02-archive.jpg", credit: "Ernest Shackleton, c. 1914–1917 · public domain" }, 3: { file: "03-archive.jpg", credit: "Frank Hurley · 1915 · public domain" }, 6: { file: "06-archive.jpg", credit: "Frank Hurley · November 1915 · public domain" }, 11: { file: "11-archive.jpg", credit: "Frank Hurley · April 1916 · public domain" }, 17: { file: "17-archive.jpg", credit: "Frank Hurley · August 1916 · public domain" } },
+      caps: [
       "In 1914, a ship called Endurance sailed south, to Antarctica.",
       "Its captain, Ernest Shackleton, wanted to walk across the whole frozen continent.",
       "But the sea froze around the ship. It could not move.",
@@ -189,7 +193,9 @@
       "Thousands of people from different countries had worked as one team.",
       "So — when things get dark, how do YOU stay calm?",
     ] },
-    helenkeller: { title: "Helen Keller and the Word “Water”", caps: [
+    helenkeller: { title: "Helen Keller and the Word “Water”",
+      archive: { 6: { file: "06-archive.jpg", credit: "Helen Keller and Anne Sullivan, July 1888 · public domain" }, 16: { file: "16-archive.jpg", credit: "Whitman · 1904 · public domain" } },
+      caps: [
       "When Helen Keller was a baby, she became very sick.",
       "She lived. But after the illness, she could not see, and she could not hear.",
       "As she grew up, she lived in a dark, silent world, with no words at all.",
@@ -209,7 +215,9 @@
       "She wrote books, travelled the world, and helped millions of people.",
       "So — what word changed YOUR world?",
     ] },
-    petrov: { title: "The Man Who Didn’t Press the Button", caps: [
+    petrov: { title: "The Man Who Didn’t Press the Button",
+      archive: { 16: { file: "16-archive.jpg", credit: "Queery-54 · 2016 · CC BY-SA 4.0" } },
+      caps: [
       "It was just after midnight on the twenty-sixth of September, 1983.",
       "In a secret room near Moscow, Stanislav Petrov was watching the computer screens.",
       "His job was to warn his country if enemy missiles were coming.",
@@ -229,7 +237,9 @@
       "One calm decision, in the middle of the night, may have saved millions of lives.",
       "So — when everyone else is in a hurry, can YOU stop and think?",
     ] },
-    curie: { title: "Marie Curie — Two Nobel Prizes", caps: [
+    curie: { title: "Marie Curie — Two Nobel Prizes",
+      archive: { 6: { file: "06-archive.jpg", credit: "Pierre and Marie Curie, c. 1904 · public domain" }, 11: { file: "11-archive.jpg", credit: "Marie Curie, 1911 · public domain" }, 13: { file: "13-archive.jpg", credit: "From “La radiologie et la guerre”, 1921 · public domain" } },
+      caps: [
       "In Warsaw in the 1880s, girls were not allowed to go to university.",
       "So Maria Skłodowska studied in secret, at night, in a hidden “flying university”.",
       "She saved money for years, and in 1891, she moved to Paris.",
@@ -249,7 +259,9 @@
       "A girl who was not allowed to study changed science forever.",
       "So — what would YOU study, if no one could stop you?",
     ] },
-    truce: { title: "The Christmas Truce", caps: [
+    truce: { title: "The Christmas Truce",
+      archive: { 10: { file: "10-archive.jpg", credit: "Harold B. Robson · 1914 · IWM · public domain" }, 11: { file: "11-archive.jpg", credit: "25 December 1914 · IWM · public domain" } },
+      caps: [
       "In December 1914, the First World War was only a few months old.",
       "Millions of young soldiers lived in cold, wet trenches, very close to their enemies.",
       "Between the trenches was “no man’s land” — a dangerous empty field.",
@@ -269,7 +281,9 @@
       "It showed that, even in the worst times, people can choose kindness.",
       "So — could YOU be kind to someone you don’t agree with?",
     ] },
-    terryfox: { title: "Terry Fox — The Marathon of Hope", caps: [
+    terryfox: { title: "Terry Fox — The Marathon of Hope",
+      archive: { 11: { file: "11-archive.jpg", credit: "Terry Fox in Scarborough, 1980 · City of Toronto Archives" }, 16: { file: "16-archive.jpg", credit: "Gordon Leggett · 2017 · CC BY-SA 4.0" } },
+      caps: [
       "Terry Fox was a normal Canadian student who loved basketball.",
       "When he was eighteen, doctors found cancer in his leg.",
       "To save his life, they had to cut off his right leg.",
@@ -289,7 +303,9 @@
       "His run has raised hundreds of millions of dollars for cancer research.",
       "So — what would YOU keep going for, even when it hurts?",
     ] },
-    mirzakhani: { title: "Maryam Mirzakhani — Drawing the Universe", caps: [
+    mirzakhani: { title: "Maryam Mirzakhani — Drawing the Universe",
+      archive: { 16: { file: "16-archive.jpg", credit: "Romainbehar · Lyon, 2020 · CC0" } },
+      caps: [
       "As a girl in Tehran, Maryam Mirzakhani loved stories more than anything.",
       "She read every book she could find. She wanted to be a writer.",
       "At school, maths was not her favourite subject. Her marks were not very good at first.",
@@ -309,7 +325,9 @@
       "She showed that maths is not about being fast. It is about being curious, and patient.",
       "So — what are YOU curious about?",
     ] },
-    apollo13: { title: "Apollo 13 — “Houston, We’ve Had a Problem”", caps: [
+    apollo13: { title: "Apollo 13 — “Houston, We’ve Had a Problem”",
+      archive: { 1: { file: "01-archive.jpg", credit: "NASA · 11 April 1970" }, 4: { file: "04-archive.jpg", credit: "NASA · 17 April 1970" }, 11: { file: "11-archive.jpg", credit: "NASA · 15 April 1970" }, 15: { file: "15-archive.jpg", credit: "NASA · 17 April 1970" }, 16: { file: "16-archive.jpg", credit: "NASA · 17 April 1970" } },
+      caps: [
       "In April 1970, three astronauts flew to the Moon on Apollo 13.",
       "For two days, everything went perfectly. Then, a loud bang.",
       "One of the astronauts said the famous words: “Houston, we’ve had a problem.”",
@@ -329,7 +347,9 @@
       "They never landed on the Moon. But people called it a “successful failure.”",
       "So — when your plan fails, can YOU find another way home?",
     ] },
-    wright: { title: "The Wright Brothers — Twelve Seconds", caps: [
+    wright: { title: "The Wright Brothers — Twelve Seconds",
+      archive: { 3: { file: "03-archive.jpg", credit: "Orville and Wilbur Wright, 1909 · public domain" }, 6: { file: "06-archive.jpg", credit: "Orville Wright · 1902 · public domain" }, 14: { file: "14-archive.jpg", credit: "John T. Daniels · 17 December 1903 · public domain" } },
+      caps: [
       "Over a hundred years ago, most people said one thing: humans will never fly.",
       "But two brothers in America did not believe it.",
       "Wilbur and Orville Wright had a small bicycle shop. They had no university degrees.",
@@ -401,7 +421,12 @@
     const N = starts.length;
     const beats = starts.map((s, i) => {
       const imgDur = durs[i] + (i < N - 1 ? CROSS : 0);
-      return { i, start: s, imgDur, cap: st.caps[i], img: "assets/story/" + S + "/" + String(i + 1).padStart(2, "0") + ".png" };
+      // archive: { 3: { file: "03-hurley.jpg", credit: "Frank Hurley · 1915 · public domain" } } — a real
+      // photo for that beat, shown whole (never cropped) with its credit line; other beats stay paintings
+      const ar = st.archive && st.archive[i + 1];
+      return { i, start: s, imgDur, cap: st.caps[i],
+        img: "assets/story/" + S + "/" + (ar ? ar.file : String(i + 1).padStart(2, "0") + ".png"),
+        archive: !!ar, credit: ar ? ar.credit || "" : "" };
     });
     return { id: S, title: st.title, dir: "assets/story/" + S + "/", beats, duration: TOTAL, cross: CROSS };
   }

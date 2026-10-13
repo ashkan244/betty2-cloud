@@ -9,6 +9,7 @@ import { spawn } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { existsSync, mkdirSync, readFileSync } from "node:fs";
+import { storyPreflight } from "./story-preflight.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -33,6 +34,13 @@ const CRF = Number(process.env.CRF || 16);
 const CAP = (process.env.CAP || "png").toLowerCase();
 const SQ  = Number(process.env.SQ || 92);
 const W = M.w, H = M.h;
+const DRAFT = process.env.DRAFT === "1";
+if (MODE === "story") {
+  try {
+    const check = storyPreflight(ROOT, ID, { draft: DRAFT });
+    if (check.missing.length) console.warn(`Draft only: ${check.missing.length} story images missing.`);
+  } catch (e) { console.error(e.message); process.exit(2); }
+}
 
 const deckFile = path.resolve(ROOT, M.page);
 // CAM=<clip> burns the host's footage into the narrator slot (it must be in the
@@ -46,7 +54,7 @@ if (process.env.BOOK) deckUrl += "&book=" + encodeURIComponent(process.env.BOOK)
 if (process.env.DIR === "0") deckUrl += "&dir=0";
 if (process.env.FX === "0") deckUrl += "&fx=0";
 const OUT_DIR = path.resolve(__dirname, process.env.OUTDIR || "out");
-const OUT = path.resolve(OUT_DIR, `${M.prefix}-${ID}${process.env.SUFFIX || ""}.mp4`);
+const OUT = path.resolve(OUT_DIR, `${M.prefix}-${ID}${process.env.SUFFIX || ""}${MODE === "story" && DRAFT ? "-draft" : ""}.mp4`);
 
 if (!existsSync(deckFile)) { console.error("cannot find " + M.page); process.exit(1); }
 mkdirSync(OUT_DIR, { recursive: true });
@@ -96,8 +104,20 @@ const TO = Math.min(duration, Number(process.env.TO || duration));
 const firstFrame = Math.floor(FROM * FPS);
 const totalFrames = Math.ceil(TO * FPS) - firstFrame;
 // every story image decoded before frame one, so no frame catches a blank
-await page.evaluate(() => Promise.all(((window.STORY && window.STORY.beats) || []).map((b) =>
-  new Promise((r) => { const im = new Image(); im.onload = im.onerror = r; im.src = b.img; }))));
+const brokenImages = await page.evaluate(async () => {
+  const results = await Promise.all(((window.STORY && window.STORY.beats) || []).map((b) =>
+    new Promise((r) => {
+      const im = new Image();
+      im.onload = () => r(im.naturalWidth > 0 ? null : b.img);
+      im.onerror = () => r(b.img);
+      im.src = b.img;
+    })));
+  return results.filter(Boolean);
+});
+if (brokenImages.length && !DRAFT) {
+  await browser.close();
+  throw new Error(`Story images could not be decoded: ${brokenImages.join(', ')}`);
+}
 console.log(`● ${MODE} ${ID} · ${duration.toFixed(1)}s · ${FPS} fps · ${totalFrames} frames → ${path.basename(OUT)}`);
 
 const FFMPEG = process.env.FFMPEG || "ffmpeg";

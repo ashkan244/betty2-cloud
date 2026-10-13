@@ -1,0 +1,262 @@
+[
+ {
+  "id": "shackleton",
+  "beat": 2,
+  "file": "02-archive.jpg",
+  "title": "File:Ernest Shackleton c1914-1917.jpg",
+  "license": "Public domain",
+  "artist": "Alex Gunn",
+  "date": "between circa 1914 and ci",
+  "source": "https://commons.wikimedia.org/wiki/File%3AErnest_Shackleton_c1914-1917.jpg"
+ },
+ {
+  "id": "shackleton",
+  "beat": 3,
+  "file": "03-archive.jpg",
+  "title": "File:Endurance trapped in pack ice.jpg",
+  "license": "Public domain",
+  "artist": "Frank Hurley",
+  "date": "1915-02",
+  "source": "https://commons.wikimedia.org/wiki/File%3AEndurance_trapped_in_pack_ice.jpg"
+ },
+ {
+  "id": "shackleton",
+  "beat": 6,
+  "file": "06-archive.jpg",
+  "title": "File:Endurance Final Sinking.jpg",
+  "license": "Public domain",
+  "artist": "Frank Hurley",
+  "date": "1915-11",
+  "source": "https://commons.wikimedia.org/wiki/File%3AEndurance_Final_Sinking.jpg"
+ },
+ {
+  "id": "shackleton",
+  "beat": 11,
+  "file": "11-archive.jpg",
+  "title": "File:LaunchingTheJamesCaird2.jpg",
+  "license": "Public domain",
+  "artist": "Probably Frank Hurley, the expedition's photographer",
+  "date": "1916-04-24",
+  "source": "https://commons.wikimedia.org/wiki/File%3ALaunchingTheJamesCaird2.jpg"
+ },
+ {
+  "id": "shackleton",
+  "beat": 17,
+  "file": "17-archive.jpg",
+  "title": "File:Relieving of marooned men by Chilean tug Yelcho, 1916 - photographer Frank Hurley (8725114142).jpg",
+  "license": "Public domain",
+  "artist": "Frank Hurley",
+  "date": "1916",
+  "source": "https://commons.wikimedia.org/wiki/File%3ARelieving_of_marooned_men_by_Chilean_tug_Yelcho%2C_1916_-_photographer_Frank_Hurley_(8725114142).jpg"
+ },
+ {
+  "id": "truce",
+  "beat": 10,
+  "file": "10-archive.jpg",
+  "title": "File:Christmas Truce 1914 IWM Q 50719.jpg",
+  "license": "Public domain",
+  "artist": "Harold Burge Robson",
+  "date": "1914",
+  "source": "https://commons.wikimedia.org/wiki/File%3AChristmas_Truce_1914_IWM_Q_50719.jpg"
+ },
+ {
+  "id": "truce",
+  "beat": 11,
+  "file": "11-archive.jpg",
+  "title": "File:The Christmas Truce on the Western Front, 1914 Q50720.jpg",
+  "license": "Public domain",
+  "artist": "Unknown authorUnknown author",
+  "date": "25 December 1914 (First W",
+  "source": "https://commons.wikimedia.org/wiki/File%3AThe_Christmas_Truce_on_the_Western_Front%2C_1914_Q50720.jpg"
+ },
+ {
+  "id": "wright",
+  "beat": 14,
+  "file": "14-archive.jpg",
+  "title": "File:First flight2.jpg",
+  "license": "Public domain",
+  "artist": "John T. Daniels",
+  "date": "1903-12-17",
+  "source": "https://commons.wikimedia.org/wiki/File%3AFirst_flight2.jpg"
+ },
+ {
+  "id": "wright",
+  "beat": 3,
+  "file": "03-archive.jpg",
+  "title": "File:Orville and Wilbur Wright, full length portrait, standing, wearing derbies LCCN2016649438.jpg",
+  "license": "Public domain",
+  "artist": "Miscellaneous Items in High Demand, PPOC, Library of Congress",
+  "date": "1909",
+  "source": "https://commons.wikimedia.org/wiki/File%3AOrville_and_Wilbur_Wright%2C_full_length_portrait%2C_standing%2C_wearing_derbies_LCCN2016649438.jpg"
+ },
+ {
+  "id": "wright",
+  "beat": 6,
+  "file": "06-archive.jpg",
+  "title": "File:1902-10-10 KittyHawk WilburWrightGliding.jpg",
+  "license": "Public domain",
+  "artist": "Orville Wright",
+  "date": "1902-10-10",
+  "source": "https://commons.wikimedia.org/wiki/File%3A1902-10-10_KittyHawk_WilburWrightGliding.jpg"
+ },
+ {
+  "id": "apollo13",
+  "beat": 1,
+  "file": "01-archive.jpg",
+  "title": "File:Apollo 13 Saturn V launch.jpg",
+  "license": "Public domain",
+  "artist": "NASA",
+  "date": "1970-04-11",
+  "source": "https://commons.wikimedia.org/wiki/File%3AApollo_13_Saturn_V_launch.jpg"
+ },
+ {
+  "id": "apollo13",
+  "beat": 4,
+  "file": "04-archive.jpg",
+  "title": "File:View of damaged Apollo 13 Service Module from the Lunar-Command Modules (as13-59-8500).jpg",
+  "license": "Public domain",
+  "artist": "NASA Johnson Space Center",
+  "date": "Taken on 17 April 1970",
+  "source": "https://commons.wikimedia.org/wiki/File%3AView_of_damaged_Apollo_13_Service_Module_from_the_Lunar-Command_Modules_(as13-59-8500).jpg"
+ },
+ {
+  "id": "apollo13",
+  "beat": 11,
+  "file": "11-archive.jpg",
+  "title": "File:Apollo 13 Mailbox at Mission Control.jpg",
+  "license": "Public domain",
+  "artist": "NASA",
+  "date": "Taken on 15 April 1970",
+  "source": "https://commons.wikimedia.org/wiki/File%3AApollo_13_Mailbox_at_Mission_Control.jpg"
+ },
+ {
+  "id": "apollo13",
+  "beat": 15,
+  "file": "15-archive.jpg",
+  "title": "File:Apollo13 splashdown.jpg",
+  "license": "Public domain",
+  "artist": "NASA",
+  "date": "1970-04-17",
+  "source": "https://commons.wikimedia.org/wiki/File%3AApollo13_splashdown.jpg"
+ },
+ {
+  "id": "apollo13",
+  "beat": 16,
+  "file": "16-archive.jpg",
+  "title": "File:Mission Control Celebrates - GPN-2000-001313.jpg",
+  "license": "Public domain",
+  "artist": "NASA",
+  "date": "Taken on 17 April 1970",
+  "source": "https://commons.wikimedia.org/wiki/File%3AMission_Control_Celebrates_-_GPN-2000-001313.jpg"
+ },
+ {
+  "id": "curie",
+  "beat": 6,
+  "file": "06-archive.jpg",
+  "title": "File:Pierre and Marie Curie.jpg",
+  "license": "Public domain",
+  "artist": "Unknown photographer",
+  "date": "circa 1904date QS:P,+1904",
+  "source": "https://commons.wikimedia.org/wiki/File%3APierre_and_Marie_Curie.jpg"
+ },
+ {
+  "id": "curie",
+  "beat": 11,
+  "file": "11-archive.jpg",
+  "title": "File:Marie Curie (Nobel-Chem).jpg",
+  "license": "Public domain",
+  "artist": "Fotograv. - Generalstabens Litografiska Anstalt Stockholm",
+  "date": "1911",
+  "source": "https://commons.wikimedia.org/wiki/File%3AMarie_Curie_(Nobel-Chem).jpg"
+ },
+ {
+  "id": "curie",
+  "beat": 13,
+  "file": "13-archive.jpg",
+  "title": "File:La radiologie et la guerre (1921) (14758186365).jpg",
+  "license": "No restrictions",
+  "artist": "Curie, Marie, 1867-1934; Borel, Emile, 1871-1956; Curie, Pierre, 1859-",
+  "date": "1921",
+  "source": "https://commons.wikimedia.org/wiki/File%3ALa_radiologie_et_la_guerre_(1921)_(14758186365).jpg"
+ },
+ {
+  "id": "helenkeller",
+  "beat": 6,
+  "file": "06-archive.jpg",
+  "title": "File:Helen Keller with Anne Sullivan in July 1888.jpg",
+  "license": "Public domain",
+  "artist": "Family member of Thaxter P. Spencer, now part of the R. Stanton Avery ",
+  "date": "1888-07",
+  "source": "https://commons.wikimedia.org/wiki/File%3AHelen_Keller_with_Anne_Sullivan_in_July_1888.jpg"
+ },
+ {
+  "id": "helenkeller",
+  "beat": 16,
+  "file": "16-archive.jpg",
+  "title": "File:Helen Keller 1904 Photographer Whitman.jpg",
+  "license": "Public domain",
+  "artist": "Photographer Whitman",
+  "date": "1904",
+  "source": "https://commons.wikimedia.org/wiki/File%3AHelen_Keller_1904_Photographer_Whitman.jpg"
+ },
+ {
+  "id": "petrov",
+  "beat": 16,
+  "file": "16-archive.jpg",
+  "title": "File:Stanislaw-jewgrafowitsch-petrow-2016.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "Queery-54",
+  "date": "2016-07-03",
+  "source": "https://commons.wikimedia.org/wiki/File%3AStanislaw-jewgrafowitsch-petrow-2016.jpg"
+ },
+ {
+  "id": "terryfox",
+  "beat": 16,
+  "file": "16-archive.jpg",
+  "title": "File:2017-10-07 01 Terry Fox Statue at Mile 0, St. John's NL Canada.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "Gordon Leggett",
+  "date": "Taken on 7 October 2017, ",
+  "source": "https://commons.wikimedia.org/wiki/File%3A2017-10-07_01_Terry_Fox_Statue_at_Mile_0%2C_St._John's_NL_Canada.jpg"
+ },
+ {
+  "id": "mirzakhani",
+  "beat": 16,
+  "file": "16-archive.jpg",
+  "title": "File:Lyon 7e - Allée Maryam Mirzakhani - Plaque.jpg",
+  "license": "CC0",
+  "artist": "Romainbehar",
+  "date": "2020-12-05 11:37:44",
+  "source": "https://commons.wikimedia.org/wiki/File%3ALyon_7e_-_All%C3%A9e_Maryam_Mirzakhani_-_Plaque.jpg"
+ },
+ {
+  "id": "hachiko",
+  "beat": 12,
+  "file": "12-archive.jpg",
+  "title": "File:Chuken Hachiko at Shibuya Station c1933.png",
+  "license": "Public domain",
+  "artist": "Unknown authorUnknown author",
+  "date": "circa 1933",
+  "source": "https://commons.wikimedia.org/wiki/File%3AChuken_Hachiko_at_Shibuya_Station_c1933.png"
+ },
+ {
+  "id": "hachiko",
+  "beat": 16,
+  "file": "16-archive.jpg",
+  "title": "File:Hachiko square 2020-04-19.jpg",
+  "license": "CC0",
+  "artist": "Asanagi",
+  "date": "2020-04-19 11:12:16",
+  "source": "https://commons.wikimedia.org/wiki/File%3AHachiko_square_2020-04-19.jpg"
+ },
+ {
+  "id": "terryfox",
+  "beat": 11,
+  "file": "11-archive.jpg",
+  "title": "File:Terry Fox visit to Scarborough, 1980 (S1762 fl2128 i0007).jpg",
+  "license": "Attribution",
+  "artist": "Peter Mykusz / City of Scarborough",
+  "date": "1980-07-11",
+  "source": "https://commons.wikimedia.org/wiki/File%3ATerry_Fox_visit_to_Scarborough%2C_1980_(S1762_fl2128_i0007).jpg"
+ }
+]
