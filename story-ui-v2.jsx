@@ -53,7 +53,7 @@ function S2Slide({ beat, opacity, time }) {
       <div style={{ position: "absolute", inset: 0, opacity, zIndex: beat.i, overflow: "hidden" }}>
         <img src={beat.img} draggable={false} style={{ position: "absolute", left: "-8%", top: "-8%", width: "116%", height: "116%",
           objectFit: "cover", filter: "blur(40px) brightness(0.38) saturate(0.7)" }} />
-        <img src={beat.img} draggable={false} style={{ position: "absolute", left: "30%", top: "12%", width: "64%", height: "56%",
+        <img src={beat.img} draggable={false} style={{ position: "absolute", left: "30%", top: "12%", width: "64%", height: "50%",
           objectFit: "contain", transform: `scale(${1 + 0.05 * kb})`, transformOrigin: "60% 40%",
           filter: "drop-shadow(0 24px 50px rgba(0,0,0,0.75)) sepia(0.12)" }} />
       </div>

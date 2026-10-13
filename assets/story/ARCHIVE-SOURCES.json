@@ -617,7 +617,8 @@
   "license": "CC BY 2.0",
   "artist": "Monceau from San Antonio",
   "date": "2012-08-04 04:12",
-  "source": "https://commons.wikimedia.org/wiki/File%3ALaboratory_-_Pierre_%26_Marie_Curie_-_10_rue_Vauquelin%2C_Paris_5.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File%3ALaboratory_-_Pierre_%26_Marie_Curie_-_10_rue_Vauquelin%2C_Paris_5.jpg",
+  "unused": "French text on the plaque (English-only rule)"
  },
  {
   "id": "curie",
