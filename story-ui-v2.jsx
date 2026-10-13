@@ -43,7 +43,9 @@ function S2Slide({ beat, opacity, time }) {
   let tx = dir * (kb * 30 - 15);
   let ty = -(kb * 16 - 8);
   if ((window.s2fxOn && s2fxOn())) { const m = s2Move(beat.i, kb); scale = m.s; tx = m.x; ty = m.y; }   // story-fx.jsx: six moves
-  if (beat.borrowed) { scale = scale * 1.35; tx = tx * 2.2; ty = ty * 2.2 - 40; }
+  // a borrowed close crop: zoom in towards the upper third (where faces are), so it
+  // reads as a second shot of the same photo instead of a random corner of it
+  if (beat.borrowed) { scale = scale * 1.3; tx = tx * 1.6; ty = ty * 1.2 + 70; }
   if (beat.archive) {
     // a real archive photo: whole, over a dark blurred copy of itself, a slow push in,
     // placed in the upper right so the narrator circle and caption keep their space
