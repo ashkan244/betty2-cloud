@@ -21,7 +21,8 @@
 const S2FX_GOLD = "#e9c46a";
 const S2FX_WHITE = "#f4f1ea";
 // weather covers all four seasons, so a rain layer would be wrong half the time
-const S2FX_MOODS = { lighthouse: "beam", dreams: "stars", coffee: "steam", summer: "pollen", market: "dust", weather: "dust", waiter: "steam", hachiko: "dust" };
+const S2FX_MOODS = { lighthouse: "beam", dreams: "stars", coffee: "steam", summer: "pollen", market: "dust", weather: "dust", waiter: "steam", hachiko: "dust",
+  shackleton: "snow", thaicave: "dust", helenkeller: "pollen", petrov: "stars", curie: "dust", truce: "snow", terryfox: "dust", mirzakhani: "stars", apollo13: "stars", wright: "dust" };
 
 function s2fxOn() {
   return new URLSearchParams(location.search).get("fx") !== "0";
@@ -105,11 +106,18 @@ function S2FXParticles({ time }) {
       transformOrigin: "0 50%", transform: `rotate(${158 + a}deg)`, mixBlendMode: "screen", filter: "blur(38px)", opacity: pulse,
       background: "radial-gradient(100% 50% at 0% 50%, rgba(255,236,190,0.30), rgba(255,236,190,0.10) 45%, transparent 75%)" }} />);
   }
-  const n = { beam: 14, stars: 46, steam: 9, pollen: 34, dust: 30, rain: 70 }[mood] || 30;
+  const n = { beam: 14, stars: 46, steam: 9, pollen: 34, dust: 30, rain: 70, snow: 60 }[mood] || 30;
   for (let i = 0; i < n; i++) {
     const r1 = s2Rand(i, 1), r2 = s2Rand(i, 2), r3 = s2Rand(i, 3);
     let st;
-    if (mood === "rain") {
+    if (mood === "snow") {
+      // slow round flakes drifting down and sideways, a few out of focus
+      const y = ((r2 * 1250 + time * (40 + r3 * 60)) % 1250) - 80;
+      const x = r1 * 1980 - 30 + 40 * Math.sin(time * (0.3 + r3 * 0.5) + i);
+      const sz = 2 + r3 * 5;
+      st = { left: x, top: y, width: sz, height: sz, borderRadius: "50%", background: `rgba(244,248,255,${0.35 + 0.4 * r1})`,
+        filter: r3 > 0.8 ? "blur(2px)" : "none" };
+    } else if (mood === "rain") {
       const y = ((r2 * 1300 + time * (900 + r3 * 400)) % 1300) - 120;
       const x = r1 * 2100 - 90 - y * 0.18;
       st = { left: x, top: y, width: 1.4, height: 46 + r3 * 40, background: "rgba(200,220,235,0.22)", transform: "rotate(10deg)" };
