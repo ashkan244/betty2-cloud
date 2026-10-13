@@ -1,0 +1,61 @@
+# Render Slow Stories in parallel (one runner per story) and attach the MP4s
+# to the "renders" release. Run: gh workflow run stories.yml -f ids=apollo13,wright
+name: stories
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: "Story ids, comma separated"
+        required: true
+        default: "apollo13,shackleton,wright,curie,helenkeller,hachiko,truce"
+
+permissions:
+  contents: write
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      ids: ${{ steps.m.outputs.ids }}
+    steps:
+      - id: m
+        run: echo "ids=$(echo '${{ inputs.ids }}' | jq -Rc 'split(",") | map(gsub("\\s";"")) | map(select(length>0))')" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+      - name: make sure the release exists
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: gh release view renders >/dev/null 2>&1 || gh release create renders --title "Renders" --notes "Rendered videos (silent MP4, 1080p30)."
+
+  story:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        id: ${{ fromJSON(needs.plan.outputs.ids) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: install (runner's Google Chrome, no Chromium download)
+        working-directory: render
+        env: { PUPPETEER_SKIP_DOWNLOAD: "true" }
+        run: npm ci --no-audit --no-fund
+      - name: render story ${{ matrix.id }}
+        working-directory: render
+        env:
+          MODE: story
+          ID: ${{ matrix.id }}
+          CAP: jpeg
+          SQ: "92"
+          OUTDIR: out/v5
+          CHROME: /usr/bin/google-chrome
+          FFMPEG: ffmpeg
+        run: node render-vshort.mjs
+      - name: attach to the "renders" release
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: gh release upload renders render/out/v5/slow-story-${{ matrix.id }}.mp4 --clobber

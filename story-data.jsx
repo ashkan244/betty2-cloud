@@ -129,7 +129,7 @@
       "Perfect English is not the goal. Being heard is. What will YOU say today?",
     ] },
     hachiko: { title: "Hachikō — The Dog Who Waited",
-      archive: { 12: { file: "12-archive.jpg", credit: "Hachikō at Shibuya Station, c. 1933 · public domain" }, 16: { file: "16-archive.jpg", credit: "Shibuya, 2020 · CC0" } },
+      archive: { 11: { file: "11-archive.jpg", credit: "1933 · public domain" }, 13: { file: "13-archive.jpg", credit: "Asahi Shimbun · 1933 · public domain" }, 14: { file: "14-archive.jpg", credit: "1936 · public domain" }, 16: { file: "16-archive.jpg", credit: "Shibuya, 2020 · CC0" } },
       caps: [
       "Every afternoon, when the train came in, a dog sat at Shibuya Station in Tokyo.",
       "He was waiting for someone. Someone who would never come.",
@@ -152,7 +152,8 @@
     ] },
     // ── True Stories in Slow English (see TRUE-STORIES.md) ──
     shackleton: { title: "Shackleton — Lost in the Ice",
-      archive: { 2: { file: "02-archive.jpg", credit: "Ernest Shackleton, c. 1914–1917 · public domain" }, 3: { file: "03-archive.jpg", credit: "Frank Hurley · 1915 · public domain" }, 6: { file: "06-archive.jpg", credit: "Frank Hurley · November 1915 · public domain" }, 11: { file: "11-archive.jpg", credit: "Frank Hurley · April 1916 · public domain" }, 17: { file: "17-archive.jpg", credit: "Frank Hurley · August 1916 · public domain" } },
+      documentary: true,
+      archive: { 1: { file: "01-archive.jpg", credit: "Frank Hurley · 1915 · public domain" }, 2: { file: "02-archive.jpg", credit: "Ernest Shackleton, c. 1914–1917 · public domain" }, 3: { file: "03-archive.jpg", credit: "Frank Hurley · 1915 · public domain" }, 4: { file: "04-archive.jpg", credit: "Frank Hurley · 1916 · public domain" }, 5: { file: "05-archive.jpg", credit: "Frank Hurley · 1915 · public domain" }, 6: { file: "06-archive.jpg", credit: "Frank Hurley · November 1915 · public domain" }, 7: { file: "07-archive.jpg", credit: "1915 · public domain" }, 8: { file: "08-archive.jpg", credit: "National Maritime Museum · 1915 · public domain" }, 9: { file: "09-archive.jpg", credit: "From Shackleton’s book “South” · public domain" }, 10: { file: "10-archive.jpg", credit: "Frank Hurley · State Library of NSW · 1916 · public domain" }, 11: { file: "11-archive.jpg", credit: "Frank Hurley · April 1916 · public domain" }, 16: { file: "16-archive.jpg", credit: "Frank Hurley · public domain" }, 17: { file: "17-archive.jpg", credit: "Frank Hurley · August 1916 · public domain" } },
       caps: [
       "In 1914, a ship called Endurance sailed south, to Antarctica.",
       "Its captain, Ernest Shackleton, wanted to walk across the whole frozen continent.",
@@ -194,7 +195,7 @@
       "So — when things get dark, how do YOU stay calm?",
     ] },
     helenkeller: { title: "Helen Keller and the Word “Water”",
-      archive: { 6: { file: "06-archive.jpg", credit: "Helen Keller and Anne Sullivan, July 1888 · public domain" }, 16: { file: "16-archive.jpg", credit: "Whitman · 1904 · public domain" } },
+      archive: { 2: { file: "02-archive.jpg", credit: "Archive scan · 1892 · public domain" }, 6: { file: "06-archive.jpg", credit: "Helen Keller and Anne Sullivan, July 1888 · public domain" }, 13: { file: "13-archive.jpg", credit: "Library of Congress · 1909 · public domain" }, 15: { file: "15-archive.jpg", credit: "1907 · public domain" }, 16: { file: "16-archive.jpg", credit: "Whitman · 1904 · public domain" }, 17: { file: "17-archive.jpg", credit: "Archive scan · 1913 · public domain" }, 18: { file: "18-archive.jpg", credit: "Charles Whitman · 1904 · public domain" } },
       caps: [
       "When Helen Keller was a baby, she became very sick.",
       "She lived. But after the illness, she could not see, and she could not hear.",
@@ -238,7 +239,8 @@
       "So — when everyone else is in a hurry, can YOU stop and think?",
     ] },
     curie: { title: "Marie Curie — Two Nobel Prizes",
-      archive: { 6: { file: "06-archive.jpg", credit: "Pierre and Marie Curie, c. 1904 · public domain" }, 11: { file: "11-archive.jpg", credit: "Marie Curie, 1911 · public domain" }, 13: { file: "13-archive.jpg", credit: "From “La radiologie et la guerre”, 1921 · public domain" } },
+      documentary: true,
+      archive: { 5: { file: "05-archive.jpg", credit: "Henri Manuel · 1920 · public domain" }, 6: { file: "06-archive.jpg", credit: "Pierre and Marie Curie, c. 1904 · public domain" }, 7: { file: "07-archive.jpg", credit: "Pierre Curie · 1908 · public domain" }, 8: { file: "08-archive.jpg", credit: "Smithsonian Institution · public domain" }, 10: { file: "10-archive.jpg", credit: "1912 · public domain" }, 11: { file: "11-archive.jpg", credit: "Marie Curie, 1911 · public domain" }, 12: { file: "12-archive.jpg", credit: "Marie Curie · 1923 · public domain" }, 13: { file: "13-archive.jpg", credit: "From “La radiologie et la guerre”, 1921 · public domain" }, 14: { file: "14-archive.jpg", credit: "Marie Curie · 1923 · public domain" }, 16: { file: "16-archive.jpg", credit: "1900 · public domain" }, 17: { file: "17-archive.jpg", credit: "Monceau · 2012 · CC BY 2.0" }, 18: { file: "18-archive.jpg", credit: "CC BY 4.0" } },
       caps: [
       "In Warsaw in the 1880s, girls were not allowed to go to university.",
       "So Maria Skłodowska studied in secret, at night, in a hidden “flying university”.",
@@ -260,7 +262,7 @@
       "So — what would YOU study, if no one could stop you?",
     ] },
     truce: { title: "The Christmas Truce",
-      archive: { 10: { file: "10-archive.jpg", credit: "Harold B. Robson · 1914 · IWM · public domain" }, 11: { file: "11-archive.jpg", credit: "25 December 1914 · IWM · public domain" } },
+      archive: { 1: { file: "01-archive.jpg", credit: "National Library of Scotland · 1918 · public domain" }, 2: { file: "02-archive.jpg", credit: "Pitman · 1915 · public domain" }, 10: { file: "10-archive.jpg", credit: "Harold B. Robson · 1914 · IWM · public domain" }, 11: { file: "11-archive.jpg", credit: "25 December 1914 · IWM · public domain" }, 15: { file: "15-archive.jpg", credit: "National Library of Scotland · 1918 · public domain" }, 17: { file: "17-archive.jpg", credit: "Nationaal Archief · 1914 · CC0" }, 18: { file: "18-archive.jpg", credit: "DeFacto · 2016 · CC BY-SA 4.0" } },
       caps: [
       "In December 1914, the First World War was only a few months old.",
       "Millions of young soldiers lived in cold, wet trenches, very close to their enemies.",
@@ -326,7 +328,8 @@
       "So — what are YOU curious about?",
     ] },
     apollo13: { title: "Apollo 13 — “Houston, We’ve Had a Problem”",
-      archive: { 1: { file: "01-archive.jpg", credit: "NASA · 11 April 1970" }, 4: { file: "04-archive.jpg", credit: "NASA · 17 April 1970" }, 11: { file: "11-archive.jpg", credit: "NASA · 15 April 1970" }, 15: { file: "15-archive.jpg", credit: "NASA · 17 April 1970" }, 16: { file: "16-archive.jpg", credit: "NASA · 17 April 1970" } },
+      documentary: true,
+      archive: { 1: { file: "01-archive.jpg", credit: "NASA · 11 April 1970" }, 3: { file: "03-archive.jpg", credit: "NASA · 1970 · public domain" }, 4: { file: "04-archive.jpg", credit: "NASA · 17 April 1970" }, 5: { file: "05-archive.jpg", credit: "NASA · 1970 · public domain" }, 6: { file: "06-archive.jpg", credit: "NASA · 1970 · public domain" }, 7: { file: "07-archive.jpg", credit: "NASA · 1970 · public domain" }, 9: { file: "09-archive.jpg", credit: "NASA · 1970 · public domain" }, 10: { file: "10-archive.jpg", credit: "NASA · 1970 · public domain" }, 11: { file: "11-archive.jpg", credit: "NASA · 15 April 1970" }, 12: { file: "12-archive.jpg", credit: "NASA · 1970 · public domain" }, 13: { file: "13-archive.jpg", credit: "NASA · 1970 · public domain" }, 14: { file: "14-archive.jpg", credit: "NASA · 1970 · public domain" }, 15: { file: "15-archive.jpg", credit: "NASA · 17 April 1970" }, 16: { file: "16-archive.jpg", credit: "NASA · 17 April 1970" }, 17: { file: "17-archive.jpg", credit: "NASA · 1970 · public domain" }, 18: { file: "18-archive.jpg", credit: "NASA · 1970 · public domain" } },
       caps: [
       "In April 1970, three astronauts flew to the Moon on Apollo 13.",
       "For two days, everything went perfectly. Then, a loud bang.",
@@ -348,7 +351,8 @@
       "So — when your plan fails, can YOU find another way home?",
     ] },
     wright: { title: "The Wright Brothers — Twelve Seconds",
-      archive: { 3: { file: "03-archive.jpg", credit: "Orville and Wilbur Wright, 1909 · public domain" }, 6: { file: "06-archive.jpg", credit: "Orville Wright · 1902 · public domain" }, 14: { file: "14-archive.jpg", credit: "John T. Daniels · 17 December 1903 · public domain" } },
+      documentary: true,
+      archive: { 3: { file: "03-archive.jpg", credit: "Orville and Wilbur Wright, 1909 · public domain" }, 5: { file: "05-archive.jpg", credit: "NASA · 1970 · public domain" }, 6: { file: "06-archive.jpg", credit: "Orville Wright · 1902 · public domain" }, 8: { file: "08-archive.jpg", credit: "Alecconnell · 2012 · CC BY-SA 3.0" }, 9: { file: "09-archive.jpg", credit: "1903 · CC0" }, 10: { file: "10-archive.jpg", credit: "Attributed to Wilbur Wright · 1903 · public domain" }, 11: { file: "11-archive.jpg", credit: "Attributed to Wilbur Wright · 1903 · public domain" }, 12: { file: "12-archive.jpg", credit: "Wright brothers · 1903 · public domain" }, 13: { file: "13-archive.jpg", credit: "John T. Daniels · 1903 · public domain" }, 14: { file: "14-archive.jpg", credit: "John T. Daniels · 17 December 1903 · public domain" }, 17: { file: "17-archive.jpg", credit: "Chris Light · 2025 · CC BY-SA 4.0" }, 18: { file: "18-archive.jpg", credit: "Ken Lund · 2014 · CC BY-SA 2.0" } },
       caps: [
       "Over a hundred years ago, most people said one thing: humans will never fly.",
       "But two brothers in America did not believe it.",
@@ -424,9 +428,20 @@
       // archive: { 3: { file: "03-hurley.jpg", credit: "Frank Hurley · 1915 · public domain" } } — a real
       // photo for that beat, shown whole (never cropped) with its credit line; other beats stay paintings
       const ar = st.archive && st.archive[i + 1];
+      // documentary: true — a story told only with archive photos. A beat without
+      // its own photo shows the nearest earlier one (else the next) full-frame, as a
+      // close crop with a slow move: one photo, two shots, the way documentaries cut.
+      let lend = null;
+      if (!ar && st.documentary && st.archive) {
+        const keys = Object.keys(st.archive).map(Number).sort((a, b) => a - b);
+        const before = keys.filter((k) => k < i + 1).pop();
+        const k = before != null ? before : keys.find((x) => x > i + 1);
+        if (k != null) lend = st.archive[k];
+      }
+      const src = ar || lend;
       return { i, start: s, imgDur, cap: st.caps[i],
-        img: "assets/story/" + S + "/" + (ar ? ar.file : String(i + 1).padStart(2, "0") + ".png"),
-        archive: !!ar, credit: ar ? ar.credit || "" : "" };
+        img: "assets/story/" + S + "/" + (src ? src.file : String(i + 1).padStart(2, "0") + ".png"),
+        archive: !!ar, borrowed: !!lend, credit: src ? src.credit || "" : "" };
     });
     return { id: S, title: st.title, dir: "assets/story/" + S + "/", beats, duration: TOTAL, cross: CROSS };
   }

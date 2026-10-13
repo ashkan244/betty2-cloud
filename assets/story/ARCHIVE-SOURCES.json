@@ -258,5 +258,535 @@
   "artist": "Peter Mykusz / City of Scarborough",
   "date": "1980-07-11",
   "source": "https://commons.wikimedia.org/wiki/File%3ATerry_Fox_visit_to_Scarborough%2C_1980_(S1762_fl2128_i0007).jpg"
+ },
+ {
+  "id": "apollo13",
+  "beat": 3,
+  "file": "03-archive.jpg",
+  "title": "File:The Original Apollo 13 Prime Crew - GPN-2000-001166.jpg",
+  "license": "Public domain",
+  "artist": "NASA",
+  "date": "1969-12-11",
+  "source": "https://commons.wikimedia.org/wiki/File%3AThe_Original_Apollo_13_Prime_Crew_-_GPN-2000-001166.jpg"
+ },
+ {
+  "id": "apollo13",
+  "beat": 5,
+  "file": "05-archive.jpg",
+  "title": "File:Apollo 13 Lunar Module after separation from CSM (AS13-59-8562).jpg",
+  "license": "Public domain",
+  "artist": "NASA",
+  "date": "1970-04-17",
+  "source": "https://commons.wikimedia.org/wiki/File%3AApollo_13_Lunar_Module_after_separation_from_CSM_(AS13-59-8562).jpg"
+ },
+ {
+  "id": "apollo13",
+  "beat": 6,
+  "file": "06-archive.jpg",
+  "title": "File:1970 Mission Control Apollo 13.jpg",
+  "license": "Public domain",
+  "artist": "NASA",
+  "date": "Taken on 13 April 19",
+  "source": "https://commons.wikimedia.org/wiki/File%3A1970_Mission_Control_Apollo_13.jpg"
+ },
+ {
+  "id": "apollo13",
+  "beat": 7,
+  "file": "07-archive.jpg",
+  "title": "File:Apollo 13 crew inside lunar module.jpg",
+  "license": "Public domain",
+  "artist": "NASA",
+  "date": "1970-04",
+  "source": "https://commons.wikimedia.org/wiki/File%3AApollo_13_crew_inside_lunar_module.jpg"
+ },
+ {
+  "id": "apollo13",
+  "beat": 9,
+  "file": "09-archive.jpg",
+  "title": "File:James Lovell apollo 13.jpg",
+  "license": "Public domain",
+  "artist": "NASA",
+  "date": "1970-04",
+  "source": "https://commons.wikimedia.org/wiki/File%3AJames_Lovell_apollo_13.jpg"
+ },
+ {
+  "id": "apollo13",
+  "beat": 10,
+  "file": "10-archive.jpg",
+  "title": "File:View of Mission Control Center during the Apollo 13 emergency return (s70-35368).jpg",
+  "license": "Public domain",
+  "artist": "NASA Johnson Space Center",
+  "date": "Taken on 16 April 19",
+  "source": "https://commons.wikimedia.org/wiki/File%3AView_of_Mission_Control_Center_during_the_Apollo_13_emergency_return_(s70-35368).jpg"
+ },
+ {
+  "id": "apollo13",
+  "beat": 12,
+  "file": "12-archive.jpg",
+  "title": "File:Apollo 13 LM with Mailbox.jpg",
+  "license": "Public domain",
+  "artist": "NASA Astronaut (either James A. Lovell, John L. Swigert, or ",
+  "date": "1970-04-17",
+  "source": "https://commons.wikimedia.org/wiki/File%3AApollo_13_LM_with_Mailbox.jpg"
+ },
+ {
+  "id": "apollo13",
+  "beat": 13,
+  "file": "13-archive.jpg",
+  "title": "File:Apollo 13 - Mission Control Console (S70-35096).jpg",
+  "license": "Public domain",
+  "artist": "NASA Johnson Space Center",
+  "date": "Taken on 15 April 19",
+  "source": "https://commons.wikimedia.org/wiki/File%3AApollo_13_-_Mission_Control_Console_(S70-35096).jpg"
+ },
+ {
+  "id": "apollo13",
+  "beat": 14,
+  "file": "14-archive.jpg",
+  "title": "File:Apollo 13 LM undocking (AS13-59-8566) (cropped).jpg",
+  "license": "Public domain",
+  "artist": "Project Apollo Archive",
+  "date": "2015-10-03 14:50",
+  "source": "https://commons.wikimedia.org/wiki/File%3AApollo_13_LM_undocking_(AS13-59-8566)_(cropped).jpg"
+ },
+ {
+  "id": "apollo13",
+  "beat": 17,
+  "file": "17-archive.jpg",
+  "title": "File:The Apollo 13 crew following recovery.jpg",
+  "license": "Public domain",
+  "artist": "NASA",
+  "date": "1970-04-17",
+  "source": "https://commons.wikimedia.org/wiki/File%3AThe_Apollo_13_crew_following_recovery.jpg"
+ },
+ {
+  "id": "apollo13",
+  "beat": 18,
+  "file": "18-archive.jpg",
+  "title": "File:Apollo 13 Prime Crew.jpg",
+  "license": "Public domain",
+  "artist": "NASA",
+  "date": "1970-04-29",
+  "source": "https://commons.wikimedia.org/wiki/File%3AApollo_13_Prime_Crew.jpg"
+ },
+ {
+  "id": "shackleton",
+  "beat": 1,
+  "file": "01-archive.jpg",
+  "title": "File:Endurance night 1915 SLNSW.jpg",
+  "license": "Public domain",
+  "artist": "Frank Hurley",
+  "date": "1915",
+  "source": "https://commons.wikimedia.org/wiki/File%3AEndurance_night_1915_SLNSW.jpg"
+ },
+ {
+  "id": "shackleton",
+  "beat": 4,
+  "file": "04-archive.jpg",
+  "title": "File:Elephant island party (cropped).jpg",
+  "license": "Public domain",
+  "artist": "Frank Hurley",
+  "date": "Taken on 10 May 1916",
+  "source": "https://commons.wikimedia.org/wiki/File%3AElephant_island_party_(cropped).jpg"
+ },
+ {
+  "id": "shackleton",
+  "beat": 5,
+  "file": "05-archive.jpg",
+  "title": "File:Endurance Final Sinking.jpg",
+  "license": "Public domain",
+  "artist": "Frank Hurley",
+  "date": "1915-11",
+  "source": "https://commons.wikimedia.org/wiki/File%3AEndurance_Final_Sinking.jpg"
+ },
+ {
+  "id": "shackleton",
+  "beat": 7,
+  "file": "07-archive.jpg",
+  "title": "File:Hurley and Shackleton, Antarctic Ice Flow, 1914-1915 State Library NSW a423023h.jpg",
+  "license": "Public domain",
+  "artist": "Unknown authorUnknown author",
+  "date": "between 1915 and 191",
+  "source": "https://commons.wikimedia.org/wiki/File%3AHurley_and_Shackleton%2C_Antarctic_Ice_Flow%2C_1914-1915_State_Library_NSW_a423023h.jpg"
+ },
+ {
+  "id": "shackleton",
+  "beat": 8,
+  "file": "08-archive.jpg",
+  "title": "File:A seven-dog sledge team on the ice with unidentified Endurance crew member (4793354178).jpg",
+  "license": "No restrictions",
+  "artist": "National Maritime Museum from Greenwich, United Kingdom",
+  "date": "July - October 1915",
+  "source": "https://commons.wikimedia.org/wiki/File%3AA_seven-dog_sledge_team_on_the_ice_with_unidentified_Endurance_crew_member_(4793354178).jpg"
+ },
+ {
+  "id": "shackleton",
+  "beat": 9,
+  "file": "09-archive.jpg",
+  "title": "File:South - the story of Shackleton's last expedition, 1914-1917 - The first landing ever made on Elephant Island, April 15, 1916.jpg",
+  "license": "Public domain",
+  "artist": "Author Ernest Henry Shackleton Photograph by F. Hurley",
+  "date": "1920",
+  "source": "https://commons.wikimedia.org/wiki/File%3ASouth_-_the_story_of_Shackleton's_last_expedition%2C_1914-1917_-_The_first_landing_ever_made_on_Elephant_Island%2C_April_15%2C_1916.jpg"
+ },
+ {
+  "id": "shackleton",
+  "beat": 10,
+  "file": "10-archive.jpg",
+  "title": "File:Scene on Elephant Island, after the releasing of the marooned men by Chilean tug Yelcho, 1916 - photographer Frank Hurley (8725111406).jpg",
+  "license": "No restrictions",
+  "artist": "State Library of New South Wales collection",
+  "date": "1916",
+  "source": "https://commons.wikimedia.org/wiki/File%3AScene_on_Elephant_Island%2C_after_the_releasing_of_the_marooned_men_by_Chilean_tug_Yelcho%2C_1916_-_photographer_Frank_Hurley_(8725111406).jpg"
+ },
+ {
+  "id": "shackleton",
+  "beat": 16,
+  "file": "16-archive.jpg",
+  "title": "File:Elephant Island party waving goodbye to James Caird state library nsw a423041h.jpg",
+  "license": "Public domain",
+  "artist": "Frank Hurley",
+  "date": "Taken on 24 April 19",
+  "source": "https://commons.wikimedia.org/wiki/File%3AElephant_Island_party_waving_goodbye_to_James_Caird_state_library_nsw_a423041h.jpg"
+ },
+ {
+  "id": "wright",
+  "beat": 5,
+  "file": "05-archive.jpg",
+  "title": "File:Wright Brothers Bicycle Shop (16590683660).jpg",
+  "license": "No restrictions",
+  "artist": "NASA on The Commons",
+  "date": "1937",
+  "source": "https://commons.wikimedia.org/wiki/File%3AWright_Brothers_Bicycle_Shop_(16590683660).jpg"
+ },
+ {
+  "id": "wright",
+  "beat": 8,
+  "file": "08-archive.jpg",
+  "title": "File:Wright Brothers The Camp inside.JPG",
+  "license": "CC BY-SA 3.0",
+  "artist": "Alecconnell",
+  "date": "2012-09-02",
+  "source": "https://commons.wikimedia.org/wiki/File%3AWright_Brothers_The_Camp_inside.JPG"
+ },
+ {
+  "id": "wright",
+  "beat": 9,
+  "file": "09-archive.jpg",
+  "title": "File:1903 Wright Flyer - DPLA - 913052369bd2468611aff158239166f4 (page 13).jpg",
+  "license": "CC0",
+  "artist": "",
+  "date": "1903",
+  "source": "https://commons.wikimedia.org/wiki/File%3A1903_Wright_Flyer_-_DPLA_-_913052369bd2468611aff158239166f4_(page_13).jpg"
+ },
+ {
+  "id": "wright",
+  "beat": 10,
+  "file": "10-archive.jpg",
+  "title": "File:1903 Wright Flyer and buildings at Kill Devil Hills.jpg",
+  "license": "Public domain",
+  "artist": "Attributed to Wilbur Wright (1867–1912) and/or Orville Wrigh",
+  "date": "1903-11-24",
+  "source": "https://commons.wikimedia.org/wiki/File%3A1903_Wright_Flyer_and_buildings_at_Kill_Devil_Hills.jpg"
+ },
+ {
+  "id": "wright",
+  "beat": 11,
+  "file": "11-archive.jpg",
+  "title": "File:1903 Wright Flyer on launch track before unsuccessful flight attempt 14 December 1903.jpg",
+  "license": "Public domain",
+  "artist": "Attributed to Wilbur Wright (1867–1912) and/or Orville Wrigh",
+  "date": "1903-12-14",
+  "source": "https://commons.wikimedia.org/wiki/File%3A1903_Wright_Flyer_on_launch_track_before_unsuccessful_flight_attempt_14_December_1903.jpg"
+ },
+ {
+  "id": "wright",
+  "beat": 12,
+  "file": "12-archive.jpg",
+  "title": "File:1903-12 Wright-Flyer-side-view.jpg",
+  "license": "Public domain",
+  "artist": "Wright brothers",
+  "date": "1903-12",
+  "source": "https://commons.wikimedia.org/wiki/File%3A1903-12_Wright-Flyer-side-view.jpg"
+ },
+ {
+  "id": "wright",
+  "beat": 13,
+  "file": "13-archive.jpg",
+  "title": "File:Wrightflyer.jpg",
+  "license": "Public domain",
+  "artist": "John T. Daniels",
+  "date": "1903-12-17",
+  "source": "https://commons.wikimedia.org/wiki/File%3AWrightflyer.jpg"
+ },
+ {
+  "id": "wright",
+  "beat": 17,
+  "file": "17-archive.jpg",
+  "title": "File:Wright 1903 Flyer 9464.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "Chris Light",
+  "date": "2025-08-30 08:59:10",
+  "source": "https://commons.wikimedia.org/wiki/File%3AWright_1903_Flyer_9464.jpg"
+ },
+ {
+  "id": "wright",
+  "beat": 18,
+  "file": "18-archive.jpg",
+  "title": "File:View of Outer Banks East from Memorial Tower, Wright Brothers National Memorial, Kill Devil Hills, North Carolina (14260758978).jpg",
+  "license": "CC BY-SA 2.0",
+  "artist": "Ken Lund from Reno, Nevada, USA",
+  "date": "2014-06-16 13:19",
+  "source": "https://commons.wikimedia.org/wiki/File%3AView_of_Outer_Banks_East_from_Memorial_Tower%2C_Wright_Brothers_National_Memorial%2C_Kill_Devil_Hills%2C_North_Carolina_(14260758978).jpg"
+ },
+ {
+  "id": "curie",
+  "beat": 5,
+  "file": "05-archive.jpg",
+  "title": "File:Marie Curie c. 1920s.jpg",
+  "license": "Public domain",
+  "artist": "Henri Manuel",
+  "date": "circa 1920date QS:P,",
+  "source": "https://commons.wikimedia.org/wiki/File%3AMarie_Curie_c._1920s.jpg"
+ },
+ {
+  "id": "curie",
+  "beat": 7,
+  "file": "07-archive.jpg",
+  "title": "File:Curie - Œuvres de Pierre Curie, 1908 - Pl retuschiert.jpg",
+  "license": "Public domain",
+  "artist": "Pierre Curie",
+  "date": "before 1908date QS:P",
+  "source": "https://commons.wikimedia.org/wiki/File%3ACurie_-_%C5%92uvres_de_Pierre_Curie%2C_1908_-_Pl_retuschiert.jpg"
+ },
+ {
+  "id": "curie",
+  "beat": 8,
+  "file": "08-archive.jpg",
+  "title": "File:Pierre Curie (1859-1906) and Marie Sklodowska Curie (1867-1934), c. 1903 (4405627519).jpg",
+  "license": "No restrictions",
+  "artist": "Smithsonian Institution from United States",
+  "date": "2010-03-01 12:07",
+  "source": "https://commons.wikimedia.org/wiki/File%3APierre_Curie_(1859-1906)_and_Marie_Sklodowska_Curie_(1867-1934)%2C_c._1903_(4405627519).jpg"
+ },
+ {
+  "id": "curie",
+  "beat": 10,
+  "file": "10-archive.jpg",
+  "title": "File:Marie Curie in her Paris Laboratory, 1912.jpg",
+  "license": "Public domain",
+  "artist": "unattributed",
+  "date": "1912",
+  "source": "https://commons.wikimedia.org/wiki/File%3AMarie_Curie_in_her_Paris_Laboratory%2C_1912.jpg"
+ },
+ {
+  "id": "curie",
+  "beat": 12,
+  "file": "12-archive.jpg",
+  "title": "File:Pierre Curie, by Marie Curie—Illustrations 6.jpg",
+  "license": "Public domain",
+  "artist": "Marie Curie",
+  "date": "1923",
+  "source": "https://commons.wikimedia.org/wiki/File%3APierre_Curie%2C_by_Marie_Curie%E2%80%94Illustrations_6.jpg"
+ },
+ {
+  "id": "curie",
+  "beat": 14,
+  "file": "14-archive.jpg",
+  "title": "File:Pierre Curie, by Marie Curie—Illustrations 7.jpg",
+  "license": "Public domain",
+  "artist": "Marie Curie, Henri Manuel (1874-1947)",
+  "date": "1923",
+  "source": "https://commons.wikimedia.org/wiki/File%3APierre_Curie%2C_by_Marie_Curie%E2%80%94Illustrations_7.jpg"
+ },
+ {
+  "id": "curie",
+  "beat": 16,
+  "file": "16-archive.jpg",
+  "title": "File:Marie et Pierre Curie.jpg",
+  "license": "Public domain",
+  "artist": "Unknown authorUnknown author",
+  "date": "1900",
+  "source": "https://commons.wikimedia.org/wiki/File%3AMarie_et_Pierre_Curie.jpg"
+ },
+ {
+  "id": "curie",
+  "beat": 17,
+  "file": "17-archive.jpg",
+  "title": "File:Laboratory - Pierre & Marie Curie - 10 rue Vauquelin, Paris 5.jpg",
+  "license": "CC BY 2.0",
+  "artist": "Monceau from San Antonio",
+  "date": "2012-08-04 04:12",
+  "source": "https://commons.wikimedia.org/wiki/File%3ALaboratory_-_Pierre_%26_Marie_Curie_-_10_rue_Vauquelin%2C_Paris_5.jpg"
+ },
+ {
+  "id": "curie",
+  "beat": 18,
+  "file": "18-archive.jpg",
+  "title": "File:Marie and Pierre Curie (centre) in their laboratory, Paris Wellcome V0030700.jpg",
+  "license": "CC BY 4.0",
+  "artist": "",
+  "date": "",
+  "source": "https://commons.wikimedia.org/wiki/File%3AMarie_and_Pierre_Curie_(centre)_in_their_laboratory%2C_Paris_Wellcome_V0030700.jpg"
+ },
+ {
+  "id": "helenkeller",
+  "beat": 2,
+  "file": "02-archive.jpg",
+  "title": "File:St. Nicholas (serial) (1892) (14783844983).jpg",
+  "license": "No restrictions",
+  "artist": "Internet Archive Book Images",
+  "date": "1892",
+  "source": "https://commons.wikimedia.org/wiki/File%3ASt._Nicholas_(serial)_(1892)_(14783844983).jpg"
+ },
+ {
+  "id": "helenkeller",
+  "beat": 13,
+  "file": "13-archive.jpg",
+  "title": "File:Helen Keller, three-quarter length, seated, facing right; holding hand of her teacher, Mrs. John A. Macy (Anne Mansfield Sullivan) LCCN2002706661.jpg",
+  "license": "Public domain",
+  "artist": "Miscellaneous Items in High Demand, PPOC, Library of Congres",
+  "date": "1909",
+  "source": "https://commons.wikimedia.org/wiki/File%3AHelen_Keller%2C_three-quarter_length%2C_seated%2C_facing_right%3B_holding_hand_of_her_teacher%2C_Mrs._John_A._Macy_(Anne_Mansfield_Sullivan)_LCCN2002706661.jpg"
+ },
+ {
+  "id": "helenkeller",
+  "beat": 15,
+  "file": "15-archive.jpg",
+  "title": "File:Helen Keller15.jpg",
+  "license": "Public domain",
+  "artist": "Unknown authorUnknown author",
+  "date": "circa 1907date QS:P,",
+  "source": "https://commons.wikimedia.org/wiki/File%3AHelen_Keller15.jpg"
+ },
+ {
+  "id": "helenkeller",
+  "beat": 18,
+  "file": "18-archive.jpg",
+  "title": "File:Charles Whitman - Helen Adams Keller - Google Art Project.jpg",
+  "license": "Public domain",
+  "artist": "Charles Whitman 1890s - 1900s Details on Google Art Project",
+  "date": "1904date QS:P571,+19",
+  "source": "https://commons.wikimedia.org/wiki/File%3ACharles_Whitman_-_Helen_Adams_Keller_-_Google_Art_Project.jpg"
+ },
+ {
+  "id": "hachiko",
+  "beat": 14,
+  "file": "14-archive.jpg",
+  "title": "File:One anniversary of Hachiko 19360308 Scan10038.JPG",
+  "license": "Public domain",
+  "artist": "Unknown authorUnknown author",
+  "date": "1936-03-08",
+  "source": "https://commons.wikimedia.org/wiki/File%3AOne_anniversary_of_Hachiko_19360308_Scan10038.JPG"
+ },
+ {
+  "id": "truce",
+  "beat": 1,
+  "file": "01-archive.jpg",
+  "title": "File:Clearing away mud on the Somme (4688585570).jpg",
+  "license": "No restrictions",
+  "artist": "National Library of Scotland",
+  "date": "1918-01-01 00:00:00",
+  "source": "https://commons.wikimedia.org/wiki/File%3AClearing_away_mud_on_the_Somme_(4688585570).jpg"
+ },
+ {
+  "id": "truce",
+  "beat": 4,
+  "file": "04-archive.jpg",
+  "title": "File:Snow at the front (4687960129).jpg",
+  "license": "No restrictions",
+  "artist": "National Library of Scotland",
+  "date": "1918-01-01 00:00:00",
+  "source": "https://commons.wikimedia.org/wiki/File%3ASnow_at_the_front_(4687960129).jpg"
+ },
+ {
+  "id": "truce",
+  "beat": 15,
+  "file": "15-archive.jpg",
+  "title": "File:Summer has been changed to winter by the British guns (4688659160).jpg",
+  "license": "No restrictions",
+  "artist": "National Library of Scotland",
+  "date": "1918-01-01 00:00:00",
+  "source": "https://commons.wikimedia.org/wiki/File%3ASummer_has_been_changed_to_winter_by_the_British_guns_(4688659160).jpg"
+ },
+ {
+  "id": "truce",
+  "beat": 17,
+  "file": "17-archive.jpg",
+  "title": "File:A few R.E.s Royal Engineers returning from the trenches, Bestanddeelnr 158-0033.jpg",
+  "license": "CC0",
+  "artist": "Nationaal Archief",
+  "date": "between 1914 and 191",
+  "source": "https://commons.wikimedia.org/wiki/File%3AA_few_R.E.s_Royal_Engineers_returning_from_the_trenches%2C_Bestanddeelnr_158-0033.jpg"
+ },
+ {
+  "id": "truce",
+  "beat": 18,
+  "file": "18-archive.jpg",
+  "title": "File:Christmas Truce 1914 Memorial.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "DeFacto",
+  "date": "2016-05-07 13:37:35",
+  "source": "https://commons.wikimedia.org/wiki/File%3AChristmas_Truce_1914_Memorial.jpg"
+ },
+ {
+  "id": "helenkeller",
+  "beat": 17,
+  "file": "17-archive.jpg",
+  "title": "File:Helen Keller Newspaper Notices (1913) (14591699349).jpg",
+  "license": "No restrictions",
+  "artist": "Internet Archive Book Images",
+  "date": "1913",
+  "source": "https://commons.wikimedia.org/wiki/File%3AHelen_Keller_Newspaper_Notices_(1913)_(14591699349).jpg"
+ },
+ {
+  "id": "hachiko",
+  "beat": 1,
+  "file": "01-archive.jpg",
+  "title": "File:In front of Shibuya Station in 1939 photographed by Morooka Kōji.jpg",
+  "license": "Public domain",
+  "artist": "Kōji Morooka",
+  "date": "昭和14年撮影",
+  "source": "https://commons.wikimedia.org/wiki/File%3AIn_front_of_Shibuya_Station_in_1939_photographed_by_Morooka_K%C5%8Dji.jpg"
+ },
+ {
+  "id": "hachiko",
+  "beat": 11,
+  "file": "11-archive.jpg",
+  "title": "File:Chuken Hachiko at Shibuya Station c1933.png",
+  "license": "Public domain",
+  "artist": "Unknown authorUnknown author",
+  "date": "circa 1933",
+  "source": "https://commons.wikimedia.org/wiki/File%3AChuken_Hachiko_at_Shibuya_Station_c1933.png"
+ },
+ {
+  "id": "hachiko",
+  "beat": 13,
+  "file": "13-archive.jpg",
+  "title": "File:Hachikō and sculptor Andō Teru with the Hachikō statue.jpg",
+  "license": "Public domain",
+  "artist": "朝日新聞社",
+  "date": "Taken in August 1933",
+  "source": "https://commons.wikimedia.org/wiki/File%3AHachik%C5%8D_and_sculptor_And%C5%8D_Teru_with_the_Hachik%C5%8D_statue.jpg"
+ },
+ {
+  "id": "hachiko",
+  "beat": 15,
+  "file": "15-archive.jpg",
+  "title": "File:The Hachikō's statue before being draped with a Japanese flag.jpg",
+  "license": "Public domain",
+  "artist": "Teru Andō",
+  "date": "Published in 1934 (S",
+  "source": "https://commons.wikimedia.org/wiki/File%3AThe_Hachik%C5%8D's_statue_before_being_draped_with_a_Japanese_flag.jpg"
+ },
+ {
+  "id": "truce",
+  "beat": 2,
+  "file": "02-archive.jpg",
+  "title": "File:Xi Hussars on the Western Front 1914-1915 Q51194.jpg",
+  "license": "Public domain",
+  "artist": "Pitman, Thomas Tait (Photographer)",
+  "date": "January 1915 (First ",
+  "source": "https://commons.wikimedia.org/wiki/File%3AXi_Hussars_on_the_Western_Front_1914-1915_Q51194.jpg"
  }
 ]
