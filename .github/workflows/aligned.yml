@@ -1,0 +1,115 @@
+# Footage-first episode (CLAUDE.md §18): render the episode with the host's edited clip burnt
+# in, on the host's own timing — split into CHUNKS rendered in parallel, joined without a
+# re-encode, then the host's voice (and a version with the soft music bed) laid on.
+# Started by render/cloud-aligned.mjs, which uploads footage/_work/epNN-cut.mp4 to the private
+# "footage" release and commits timing/epNN.js first.
+name: aligned
+on:
+  workflow_dispatch:
+    inputs:
+      ep:     { description: "episode number, e.g. 31", required: true }
+      chunks: { description: "parallel render chunks", required: false, default: "6" }
+
+permissions:
+  contents: write
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      idx: ${{ steps.m.outputs.idx }}
+    steps:
+      - id: m
+        run: echo "idx=$(jq -nc --argjson n ${{ inputs.chunks }} '[range(0;$n)]')" >> "$GITHUB_OUTPUT"
+
+  chunk:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: true
+      matrix:
+        k: ${{ fromJSON(needs.plan.outputs.idx) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: install (runner's Google Chrome)
+        working-directory: render
+        env: { PUPPETEER_SKIP_DOWNLOAD: "true" }
+        run: npm ci --no-audit --no-fund
+      - name: fetch the edited clip
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          mkdir -p render/footage/_work
+          gh release download footage -p "ep${{ inputs.ep }}-cut.mp4" -D render/footage/_work --clobber
+      - name: this chunk's window (frame-aligned)
+        id: w
+        run: |
+          node -e '
+            const vm=require("vm"),fs=require("fs");const c={};c.window=c;vm.createContext(c);
+            vm.runInContext(fs.readFileSync("timing/ep${{ inputs.ep }}.js","utf8"),c);
+            const D=c.__EU_TIMING.duration,N=${{ inputs.chunks }},k=${{ matrix.k }},F=30;
+            const seg=Math.ceil(D*F/N)/F, a=k*seg, b=Math.min(D,(k+1)*seg);
+            console.log("from="+a.toFixed(4)); console.log("to="+(k===N-1?D:b).toFixed(4));' >> "$GITHUB_OUTPUT"
+      - name: render chunk ${{ matrix.k }}
+        working-directory: render
+        env:
+          EP: ${{ inputs.ep }}
+          TIMED: "1"
+          CAM: render/footage/_work/ep${{ inputs.ep }}-cut.mp4
+          CAMSTART: "0"
+          FROM: ${{ steps.w.outputs.from }}
+          TO: ${{ steps.w.outputs.to }}
+          SUFFIX: -part${{ matrix.k }}
+          OUTDIR: out/parts
+          CAP: jpeg
+          SQ: "92"
+          CHROME: /usr/bin/google-chrome
+          FFMPEG: ffmpeg
+        run: node render.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: part${{ matrix.k }}
+          path: render/out/parts/*.mp4
+          retention-days: 1
+
+  join:
+    needs: chunk
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: ffmpeg + numpy
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg && python3 -m pip install -q numpy
+      - uses: actions/download-artifact@v4
+        with: { path: render/out/parts, merge-multiple: true }
+      - name: fetch the edited clip (its voice)
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          mkdir -p render/footage/_work
+          gh release download footage -p "ep${{ inputs.ep }}-cut.mp4" -D render/footage/_work --clobber
+      - name: join the chunks (no re-encode)
+        working-directory: render
+        run: |
+          mkdir -p out/final/_base
+          ls out/parts/*-part*.mp4 | sort -V | sed "s|^|file '$PWD/|; s|$|'|" > parts.txt
+          cat parts.txt
+          ffmpeg -v error -y -f concat -safe 0 -i parts.txt -c copy -movflags +faststart out/final/_base/english-unlocked-ep${{ inputs.ep }}.mp4
+          ffprobe -v error -show_entries format=duration -of csv=p=0 out/final/_base/english-unlocked-ep${{ inputs.ep }}.mp4
+      - name: voice (and a version with the music bed)
+        working-directory: render
+        env: { EP: "${{ inputs.ep }}", STEP: audio, FFMPEG: ffmpeg }
+        run: |
+          sed -i 's/run("python", \["music-bed.py"/run("python3", ["music-bed.py"/' face.mjs
+          node face.mjs
+          MUSIC=1 node face.mjs
+      - name: attach to the "finals" release
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          gh release view finals >/dev/null 2>&1 || gh release create finals --title "Finals" --notes "Face versions (host footage + voice)."
+          gh release upload finals render/out/final/english-unlocked-ep${{ inputs.ep }}-face*.mp4 --clobber
