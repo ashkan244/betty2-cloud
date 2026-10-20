@@ -1,0 +1,8 @@
+# A 10-second check that GitHub will start jobs on this repo (quota / billing).
+name: ping
+on: workflow_dispatch
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "runner ok" && nproc && free -g | head -2

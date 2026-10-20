@@ -51,6 +51,7 @@ function deckFor(ep) {
   if (process.env.UI) u += "&ui=" + encodeURIComponent(process.env.UI);
   if (process.env.CAM) u += "&cam=" + encodeURIComponent(process.env.CAM);
   if (process.env.CAMSTART) u += "&camstart=" + encodeURIComponent(process.env.CAMSTART);
+  if (process.env.TIMED === "1") u += "&timed=1";   // footage-first: timing/epNN.js from align.mjs
   // director + motion layer are ON by default in the page; DIR=0 / FX=0 switch them off
   if (process.env.DIR === "0") u += "&dir=0";
   if (process.env.FX === "0") u += "&fx=0";

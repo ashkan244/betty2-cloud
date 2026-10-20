@@ -34,6 +34,8 @@
     window.__EU_EP = ep;
     window.__EU_UI = ui;
     function babel(src) { document.write('<script type="text/babel" src="' + src + '"><\/script>'); }
+    // ?timed=1 → the host's measured timing (render/align.mjs), read by the engine
+    if (q.get("timed") === "1") document.write('<script src="timing/ep' + ep + '.js"><\/script>');
     babel("animations.jsx");        // Stage, Sprite, useTime, Easing, clamp …
     babel("episode-engine.jsx");    // the shared timing builder
     babel("data-ep" + ep + ".jsx"); // this episode's content

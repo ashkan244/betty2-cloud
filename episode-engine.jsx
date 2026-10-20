@@ -96,6 +96,15 @@
       cfg.hookDur = 0; cfg.recapDur = 0; cfg.introDur = 4.6; cfg.tailDur = 1.6;
       cfg.adaptivePause = false;
     }
+    // MEASURED timing (footage-first, CLAUDE.md §18): render/align.mjs writes timing/epNN.js
+    // from the host's own recording; player.html loads it with ?timed=1. Every line then sits
+    // exactly where the host said it, and the windows match the edited host clip.
+    const TM = typeof window !== "undefined" && window.__EU_TIMING && window.__EU_TIMING.ep === spec.epNumber
+      && window.__EU_UI !== "v3" ? window.__EU_TIMING : null;
+    if (TM) {
+      if (TM.lines.length !== spec.script.length) throw new Error(`timing/ep${spec.epNumber}: ${TM.lines.length} lines, script has ${spec.script.length} — re-run align.mjs`);
+      Object.assign(cfg, { hookDur: TM.hookDur, introDur: TM.introDur, tailDur: TM.tailDur, recapDur: TM.recapDur, outroDur: TM.outroDur });
+    }
     const SECTIONS = spec.sections;
     const PHASE_ORDER = spec.phaseOrder;
     const SCRIPT = spec.script;
@@ -120,7 +129,9 @@
         const want = nWords * cfg.pausePerWord + cfg.pauseBase;
         pause = Math.max(cfg.pauseMin, Math.min(cfg.pauseMax, want));
       }
-      const pauseEnd = end + pause;
+      const m = TM && TM.lines[i];
+      if (m) pause = m.pause;
+      const pauseEnd = (m ? m.end : end) + pause;
       const bettyVisible = bettySet.has(item.s) || item.betty === true;
       const pauseType = item.pass ? item.pass : (pause > 0 ? "rest" : null);
       t = pauseEnd;
@@ -131,8 +142,9 @@
         index: i, section: item.s, phase: meta.n, phaseLabel: meta.label,
         text, phrase: !!item.phrase, breath: item.breath || null,
         pass: item.pass || null, speaker: item.speaker || null, youTurn: !!item.youTurn,
-        start, end, pause, pauseEnd, bettyVisible, pauseType,
-        words: buildWordsExact(toks, weights, total, start, dur),
+        start: m ? m.start : start, end: m ? m.end : end, pause, pauseEnd, bettyVisible, pauseType,
+        words: m ? toks.map((tk, wi) => ({ text: tk, start: m.words[wi].start, end: m.words[wi].end }))
+          : buildWordsExact(toks, weights, total, start, dur),
       };
     });
 
@@ -163,6 +175,7 @@
     return {
       lines, vocab, duration, phases, phraseList,
       epNumber: spec.epNumber, title: spec.title,
+      ...(TM && TM.face ? { face: TM.face } : {}),   // where the host's face sits in their footage
       contentStart: hookDur + cfg.introDur, contentEnd: recapDur ? contentEnd : outroStart,
       hook: hookDur ? { start: 0, end: hookDur, text: promise, phrases: phraseList } : null,
       intro: { start: hookDur, end: hookDur + cfg.introDur },
