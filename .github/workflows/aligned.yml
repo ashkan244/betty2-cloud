@@ -44,7 +44,10 @@ jobs:
         env: { GH_TOKEN: "${{ github.token }}" }
         run: |
           mkdir -p render/footage/_work
-          gh release download footage -p "ep${{ inputs.ep }}-cut.mp4" -D render/footage/_work --clobber
+          gh release download footage -p "ep${{ inputs.ep }}-cut.mp4.part*" -D render/footage/_work --clobber
+          cat $(ls render/footage/_work/ep${{ inputs.ep }}-cut.mp4.part* | sort) > render/footage/_work/ep${{ inputs.ep }}-cut.mp4
+          rm render/footage/_work/ep${{ inputs.ep }}-cut.mp4.part*
+          ls -la render/footage/_work
       - name: this chunk's window (frame-aligned)
         id: w
         run: |
@@ -92,7 +95,10 @@ jobs:
         env: { GH_TOKEN: "${{ github.token }}" }
         run: |
           mkdir -p render/footage/_work
-          gh release download footage -p "ep${{ inputs.ep }}-cut.mp4" -D render/footage/_work --clobber
+          gh release download footage -p "ep${{ inputs.ep }}-cut.mp4.part*" -D render/footage/_work --clobber
+          cat $(ls render/footage/_work/ep${{ inputs.ep }}-cut.mp4.part* | sort) > render/footage/_work/ep${{ inputs.ep }}-cut.mp4
+          rm render/footage/_work/ep${{ inputs.ep }}-cut.mp4.part*
+          ls -la render/footage/_work
       - name: join the chunks (no re-encode)
         working-directory: render
         run: |
