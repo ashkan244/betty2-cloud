@@ -47,26 +47,36 @@ if (STEP === "all" || STEP === "render") {
 }
 if (!existsSync(base)) { console.error("✗ no render at " + base); process.exit(1); }
 
-// 3. the voice: measure, then clean + normalise in one pass
-const voice = "highpass=f=90,highpass=f=90,afftdn=nr=10:nf=-55:tn=1,"
+// 3. the voice. Measured, then ONE fixed gain to −14 LUFS — never loudnorm's dynamic mode: on the
+//    pilot (loudness range 14.9 LU) it squeezed the range and lifted the learner's silent pauses
+//    by 21 dB while speech rose 15. A gentle expander then lowers what is left of the room in
+//    the pauses (≈ −12 dB, slow release so word tails survive) and a limiter catches the peaks.
+// 130 Hz, 24 dB/oct: the pilot room rumbles up to ~200 Hz; a female voice (F0 ≈ 200 Hz) keeps its body
+const voice = "highpass=f=130,highpass=f=130,afftdn=nr=10:nf=-55:tn=1,"
   + "acompressor=threshold=-24dB:ratio=2.5:attack=8:release=140:makeup=2";
-const probe = spawnSync(FFMPEG, ["-hide_banner", "-i", cut, "-vn", "-af", `${voice},loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json`, "-f", "null", "-"], { encoding: "utf8" });
+const probe = spawnSync(FFMPEG, ["-hide_banner", "-i", cut, "-vn", "-af", `${voice},loudnorm=I=-14:TP=-1.5:print_format=json`, "-f", "null", "-"], { encoding: "utf8" });
 const m = JSON.parse((probe.stderr.match(/\{[\s\S]*?\}/g) || ["{}"]).pop());
-const ln = m.input_i ? `loudnorm=I=-14:TP=-1.5:LRA=11:measured_I=${m.input_i}:measured_TP=${m.input_tp}:measured_LRA=${m.input_lra}:measured_thresh=${m.input_thresh}:offset=${m.target_offset}:linear=true`
-  : "loudnorm=I=-14:TP=-1.5:LRA=11";
-console.log(`● voice: measured ${m.input_i} LUFS → −14 LUFS`);
+const gain = m.input_i ? (-14 - parseFloat(m.input_i)) : 0;
+const level = `volume=${gain.toFixed(2)}dB,agate=threshold=0.02:ratio=2:range=0.25:attack=10:release=300:knee=4,`
+  + "alimiter=limit=0.79:attack=4:release=60:level=disabled";
+console.log(`● voice: measured ${m.input_i} LUFS → fixed gain ${gain >= 0 ? "+" : ""}${gain.toFixed(1)} dB → −14 LUFS`);
 
 let fc, inputs = ["-i", base, "-i", cut];
 if (process.env.MUSIC === "1") {
-  // the bed sits ~22 dB under the voice and ducks a further ~8 dB while she speaks
+  // the bed (−20 dBFS RMS as written) sits at about −31 dBFS in the pauses — heard, not noticed —
+  // and ducks a further ~8 dB under the voice
   const bed = path.join(FOOT, "_work", `ep${EP}-bed.wav`);
   run("python", ["music-bed.py", cut, bed]);
   inputs.push("-i", bed);
-  fc = `[1:a]${voice},${ln},asplit=2[v][key];[2:a]volume=-22dB[b];[b][key]sidechaincompress=threshold=0.02:ratio=4:attack=60:release=600[bd];[v][bd]amix=inputs=2:normalize=0:duration=first,alimiter=limit=0.84[a]`;
+  fc = `[1:a]${voice},${level},asplit=2[v][key];[2:a]volume=-11dB[b];[b][key]sidechaincompress=threshold=0.03:ratio=4:attack=60:release=600[bd];[v][bd]amix=inputs=2:normalize=0:duration=first,alimiter=limit=0.79:level=disabled[a]`;
 } else {
-  fc = `[1:a]${voice},${ln},alimiter=limit=0.84[a]`;
+  fc = `[1:a]${voice},${level}[a]`;
 }
+// the picture decides the length: the sound is padded to it (alimiter's default auto-level
+// pushed peaks to +0.5 dBFS and -shortest once cut 3 s off the music version — both fixed)
+const videoDur = parseFloat(spawnSync(FFMPEG.replace(/ffmpeg(\.exe)?$/i, "ffprobe$1"), ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", base], { encoding: "utf8" }).stdout);
+fc = fc.replace(/\[a\]$/, ",apad[a]");
 mkdirSync(outDir, { recursive: true });
 run(FFMPEG, ["-v", "error", "-y", ...inputs, "-filter_complex", fc, "-map", "0:v:0", "-map", "[a]",
-  "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-shortest", "-movflags", "+faststart", out]);
+  "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-t", String(videoDur), "-movflags", "+faststart", out]);
 console.log("✓ " + out);

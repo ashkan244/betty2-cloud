@@ -1,0 +1,69 @@
+# Vertical shorts cut from a finished face episode — every short × every engine in parallel.
+# Started by render/cloud-shorts.mjs, which uploads shorts/src/<id>/clip.mp4 (in 20 MB pieces) to the
+# private "shorts-src" release first; data.json files travel with the repo.
+#   remotion     shorts/remotion          "Cinematic Pop"      (npx remotion render)
+#   hyperframes  render/shorts-hyperframes.mjs → shorts/hyperframes/<id>   "Kinetic Editorial"
+name: shorts
+on:
+  workflow_dispatch:
+    inputs:
+      ids:     { description: "short ids, comma separated (e.g. ep31-ways,ep31-yourturn)", required: true }
+      engines: { description: "remotion,hyperframes", required: false, default: "remotion,hyperframes" }
+
+permissions:
+  contents: write
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      ids: ${{ steps.m.outputs.ids }}
+      engines: ${{ steps.m.outputs.engines }}
+    steps:
+      - id: m
+        run: |
+          echo "ids=$(echo '${{ inputs.ids }}' | jq -Rc 'split(",") | map(gsub("\\s";"")) | map(select(length>0))')" >> "$GITHUB_OUTPUT"
+          echo "engines=$(echo '${{ inputs.engines }}' | jq -Rc 'split(",") | map(gsub("\\s";"")) | map(select(length>0))')" >> "$GITHUB_OUTPUT"
+
+  short:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        id: ${{ fromJSON(needs.plan.outputs.ids) }}
+        engine: ${{ fromJSON(needs.plan.outputs.engines) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: fetch the clip
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          d=shorts/src/${{ matrix.id }}
+          gh release download shorts-src -p "${{ matrix.id }}-clip.mp4.part*" -D "$d" --clobber
+          cat $(ls "$d"/${{ matrix.id }}-clip.mp4.part* | sort) > "$d/clip.mp4" && rm "$d"/*.part*
+          ls -la "$d"
+          mkdir -p shorts/out
+      - name: remotion
+        if: matrix.engine == 'remotion'
+        working-directory: shorts/remotion
+        run: |
+          npm ci --no-audit --no-fund
+          mkdir -p public/${{ matrix.id }}
+          cp ../src/${{ matrix.id }}/data.json ../src/${{ matrix.id }}/clip.mp4 public/${{ matrix.id }}/
+          npx remotion render src/index.ts ${{ matrix.id }} ../out/${{ matrix.id }}-remotion.mp4 --port 39123
+      - name: hyperframes
+        if: matrix.engine == 'hyperframes'
+        run: |
+          IDS=${{ matrix.id }} node render/shorts-hyperframes.mjs
+          cd shorts/hyperframes/${{ matrix.id }}
+          npx -y hyperframes@0.8.185 render --quality high --output ../../out/${{ matrix.id }}-hyperframes.mp4
+      - name: attach to the "shorts" release
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          gh release view shorts >/dev/null 2>&1 || gh release create shorts --title "Shorts" --notes "Vertical shorts (Remotion + HyperFrames)."
+          gh release upload shorts shorts/out/${{ matrix.id }}-${{ matrix.engine }}.mp4 --clobber

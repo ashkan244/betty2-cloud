@@ -55,8 +55,10 @@ jobs:
             const vm=require("vm"),fs=require("fs");const c={};c.window=c;vm.createContext(c);
             vm.runInContext(fs.readFileSync("timing/ep${{ inputs.ep }}.js","utf8"),c);
             const D=c.__EU_TIMING.duration,N=${{ inputs.chunks }},k=${{ matrix.k }},F=30;
-            const seg=Math.ceil(D*F/N)/F, a=k*seg, b=Math.min(D,(k+1)*seg);
-            console.log("from="+a.toFixed(4)); console.log("to="+(k===N-1?D:b).toFixed(4));' >> "$GITHUB_OUTPUT"
+            // whole frames: render.mjs takes floor(FROM*F) … ceil(TO*F), so nudge inward by
+            // a hair — seconds rounded to 4 places once lost 2 frames across 5 seams
+            const total=Math.ceil(D*F-1e-6), per=Math.ceil(total/N), f0=k*per, f1=Math.min(total,(k+1)*per);
+            console.log("from="+((f0+1e-4)/F).toFixed(6)); console.log("to="+((f1-1e-4)/F).toFixed(6));' >> "$GITHUB_OUTPUT"
       - name: render chunk ${{ matrix.k }}
         working-directory: render
         env:
