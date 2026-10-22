@@ -72,7 +72,7 @@ for (const id of readdirSync(SRC).filter((d) => existsSync(path.join(SRC, d, "da
         tw.push(`tl.set("#count", { textContent: "${n - s}" }, ${r3(at)});`);
         tw.push(`tl.fromTo("#count", { scale: 1.35, opacity: 0.4 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, ${r3(at)});`);
       }
-      tw.push(`tl.to("#turn", { xPercent: 104, duration: 0.3, ease: "power2.in" }, ${r3(p1 - 0.25)});`);
+      tw.push(`tl.to("#turn", { xPercent: 150, duration: 0.3, ease: "power2.in" }, ${r3(p1 - 0.25)});`);
       tw.push(`tl.fromTo("#cam", { scale: 1.0 }, { scale: 1.035, duration: ${r3(p1 - p0)}, ease: "sine.inOut", immediateRender: false }, ${r3(p0)});`);
     }
     if (l.phrase && D.phrases > 1)
